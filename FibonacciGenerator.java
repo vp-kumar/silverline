@@ -1,4 +1,3 @@
-package com.rtjvm.java.lectures.codetest;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
