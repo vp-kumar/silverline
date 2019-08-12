@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="sharing">
+
+<head>
+  <script data-require="angular.js@1.5.6" data-semver="1.5.6" src="https://code.angularjs.org/1.5.6/angular.min.js"></script> 
+  <script src="pac.js"></script>
+</head>
+
+<body>
+    <div ng-controller="headerController">
+      <h><u><bold>Header Section</bold></u></h>
+        <p> This section have user details and counts of ToDo list </p>
+              
+        <p> Welcome {{user.name}}</p>
+        
+        <p>Total avaialble ToDo list size is  {{getTotalCount()}} and you have selected: {{getSelectdListCount()}}</p>
+
+    </div
+        <br>
+    <div ng-controller="bodyController">              
+   <h><u><bold>Body Section</bold></u></h>
+             <form name="frm" ng-submit="addTodo()">
+            <p> <b>To Do List</b></p>
+            <ul>
+            <li ng-repeat="mylist in todos">
+                <input type="checkbox" ng-model="mylist.checked" />
+                <span >{{mylist.title}}</span>
+            </li>
+            </ul>
+            
+            <p>Add New list</p>
+                
+         
+            <input type="text" name="newtodo" ng-model="newtodo" required/>
+            <button ng-disabled="frm.$invalid">Add</button>
+            </form>
+        {{checkedCount()}}{{getTotal()}}
+    </div>
+     
+</body>
+
+</html>
